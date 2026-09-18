@@ -1,0 +1,155 @@
+
+{
+  "ged_gamma": {
+    "tmin"  : -0.75, "tmax" : 1,
+    "lfreq" : 30, "hfreq" : 80,
+    "epoch_signal"    : [0.15, 0.750],
+    "_COMMENT_noise" : "Move search window closer to stimulus onset",
+    "epoch_noise"     : [-0.6, 0],
+    "_COMMENT_ptp": "PTP is [tmin, tmax, annotlen] in seconds",
+    "ptp"             : [-0.75, 0.75, 0.75] 
+  },
+
+  "ged_alpha": {
+    "tmin"  : -0.75, "tmax" : 1,
+    "lfreq" : 8, "hfreq" : 30,
+    "epoch_signal"    : [-0.6, 0],
+    "_comment_noise" : "For ERD, baseline is the signal",
+    "epoch_noise"     : [0.15, 0.75],
+    "_comment_ptp": "PTP is [tmin, tmax, annotlen] in seconds",
+    "ptp"             : [-0.75, 0.75, 0.75]
+  },
+  
+  "ged_itpc": {
+    "tmin" : -0.75, "tmax" : 1,
+    "lfreq" : 5, "hfreq" : 60,
+    "ged_epoch" : [0, 0.4]
+  },
+
+  "tfr_gamma": {
+    "tmin" : -0.75, "tmax" : 1,
+    "foi_start" : 25, "foi_stop" : 100.5, "foi_step" : 0.5,
+    "n_cycles"  : 4, "order" : [4, 20], "mult" : false,
+    "decim"     : 2
+  },
+
+  "tfr_alpha": {
+    "tmin" : -0.75, "tmax" : 1,
+    "foi_start" : 7, "foi_stop" : 35.5, "foi_step" : 0.5,
+    "n_cycles"  : 3, "order" : [1, 1], "mult" : false,
+    "decim"     : 2
+  },
+
+  "baseline_correction":{
+    "mode" : "logratio"
+  },
+
+  "itpc": {
+    "foi_start" : 5, "foi_stop" : 60, "foi_step" : 0.5,
+    "min_cycles" : 1, "max_cycles" : 10,
+    "lf_freqs" : [7, 20],
+    "lf_times" : [0.05, 0.4],
+    "hf_freqs" : [25, 55],
+    "hf_times" : [0.05, 0.2],
+    "decim" : 1 
+  },
+
+"gaussians_gamma": {
+    "baseline"          : [-0.5, -0.2],
+    "time_range"        : [0.25, 0.55],
+    "fit_range"         : [25, 85],
+    "freq_range"        : [30, 80],
+    "sd_range"          : [1, 10],
+    "dprime"            : 2.5,
+    "slope_change"      : 0.05,
+    "edge_margin" : 5, "min_sep" : 10,
+    "freq_smooth" : 1, "target_freq" : 58,
+    "tolerance" : 5, "fit_negative" : false,
+    "downweight_edges" : false
+  },
+
+"gaussians_alpha": {
+    "baseline"          : [-0.575, -0.125],
+    "time_range"        : [0.2, 0.65],
+    "fit_range"         : [7, 31],
+    "freq_range"        : [8, 30],
+    "sd_range"          : [1, 5],
+    "dprime"            : 2.5,
+    "slope_change"      : 0.1,
+    "edge_margin" : 1, "min_sep" : 5,
+    "freq_smooth" : 1, "target_freq" : 10,
+    "tolerance" : 5, "fit_negative" : true,
+    "downweight_edges" : false
+  },
+
+  "ged_gamma_folders_10_10":{
+    "_comment_files"  : "Stored in gamma folder",
+    "results_folder"  : "spatial_filter_gamma",
+    "tfr_filename"    : "sf_tfr_gamma.h5",
+    "evals_filename"  : "sf_evals_gamma.npy",
+    "evecs_filename"  : "sf_evecs_gamma.npy",
+    "epoch_filename"  : "sf_epochs_gamma.h5"
+  },
+
+  "ged_gamma_folders_10_20":{
+    "_comment_files"  : "Stored in gamma folder",
+    "results_folder"  : "spatial_filter_gamma_20",
+    "tfr_filename"    : "sf_tfr_gamma_20.h5",
+    "evals_filename"  : "sf_evals_gamma_20.npy",
+    "evecs_filename"  : "sf_evecs_gamma_20.npy",
+    "epoch_filename"  : "sf_epochs_gamma_20.h5"
+  },
+
+    "ged_gamma_combined_folders_10_10":{
+    "_comment_files"  : "Stored in gamma folder",
+    "results_folder"  : "spatial_filter_gamma_combined",
+    "tfr_filename"    : "sf_tfr_gamma.h5",
+    "evals_filename"  : "sf_evals_gamma.npy",
+    "evecs_filename"  : "sf_evecs_gamma.npy",
+    "epoch_filename"  : "sf_epochs_gamma.h5"
+  },
+
+  "ged_gamma_combined_folders_10_20":{
+    "_comment_files"  : "Stored in gamma folder",
+    "results_folder"  : "spatial_filter_gamma_combined_20",
+    "tfr_filename"    : "sf_tfr_gamma_20.h5",
+    "evals_filename"  : "sf_evals_gamma_20.npy",
+    "evecs_filename"  : "sf_evecs_gamma_20.npy",
+    "epoch_filename"  : "sf_epochs_gamma_20.h5"
+  },
+
+
+    "ged_alpha_folders_10_10":{
+    "_comment_files"  : "Stored in alpha folder",
+    "results_folder"  : "spatial_filter_alpha",
+    "tfr_filename"    : "sf_tfr_alpha.h5",
+    "evals_filename"  : "sf_evals_alpha.npy",
+    "evecs_filename"  : "sf_evecs_alpha.npy",
+    "epoch_filename"  : "sf_epochs_alpha.h5"
+  },
+
+  "ged_alpha_folders_10_20":{
+    "_comment_files"  : "Stored in alpha folder",
+    "results_folder"  : "spatial_filter_alpha_20",
+    "tfr_filename"    : "sf_tfr_alpha_20.h5",
+    "evals_filename"  : "sf_evals_alpha_20.npy",
+    "evecs_filename"  : "sf_evecs_alpha_20.npy",
+    "epoch_filename"  : "sf_epochs_alpha_20.h5"
+  },
+
+  "ged_itpc_folders_10_10": {
+    "results_folder"  : "spatial_filter_itpc",
+    "filename"        : "ITPC_morlet.h5", 
+    "filename_evoked" : "ITPC_evoked.h5",
+    "evals_filename"  : "ITPC_evals.npy",
+    "evecs_filename"  : "ITPC_evecs.npy"
+  },
+
+  "ged_itpc_folders_10_20": {
+    "results_folder"  : "spatial_filter_itpc_20",
+    "filename"        : "ITPC_morlet_20.h5", 
+    "filename_evoked" : "ITPC_evoked_20.h5",
+    "evals_filename"  : "ITPC_evals_20.npy",
+    "evecs_filename"  : "ITPC_evecs_20.npy"
+  }
+}
